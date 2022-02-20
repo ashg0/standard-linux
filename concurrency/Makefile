@@ -4,9 +4,12 @@ iterative: iterative.c
 forking: forking.c
 	gcc -o $@ $<
 
-all: iterative forking
+preforked: preforked.c
+	gcc -o $@ $<
+
+all: iterative forking preforked
 
 .PHONY: clean
 
 clean:
-	rm -f iterative forking
+	rm -f iterative forking preforked
