@@ -13,9 +13,12 @@ threaded: threaded.c
 prethreaded: prethreaded.c
 	gcc -o $@ $< -lpthread
 
-all: iterative forking preforked threaded prethreaded
+poll: poll.c
+	gcc -o $@ $<
+
+all: iterative forking preforked threaded prethreaded poll
 
 .PHONY: clean
 
 clean:
-	rm -f iterative forking preforked threaded prethreaded
+	rm -f iterative forking preforked threaded prethreaded poll
